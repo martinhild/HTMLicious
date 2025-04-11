@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLicious</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+    <!-- BANNER -->
+    <div class="banner-bar">
+        <h1>
+            <img class="banner-logo" src="{{ url_for('static', filename='images/picture_html_guy.png') }}" alt="Bild">
+            <a class="banner-link" href="/">HTMLicious.de</a>
+        </h1>
+    </div>
+    <!-- Link-Bar unter Banner -->
+    <div class="top-link-bar">
+        <span>
+            <a class="LINK" href="/">Home</a>
+        </span>
+        <span>
+            <a class="LINK" href="/game">Game</a>
+        </span>
+        <span>
+            <a class="LINK" href="/schaltjahre">Schaltjahre</a>
+        </span>
+    </div>
+    </header>
+    <!-- Hauptcontainer mit Sidebar und Main-Content-Box -->
+    <div class="main-container">
+        <!-- Sidebar (scrollbares Menü) -->
+        <div class="sidebar">
+            <ul>
+                <li><a class="list-link" href="https://www.google.com/">Google</a></li>
+                <li><a class="list-link" href="https://www.w3schools.com/">w3schools</a></li>
+                <li><a class="list-link" href="https://www.wikipedia.de/">Wikipedia</a></li>
+                <li><a class="list-link" href="https://www.spiegel.de/">Spiegel</a></li>
+                <li><a class="list-link" href="https://www.youtube.com/">YouTube</a></li>
+                <li><a class="list-link" href="https://www.amazon.de/">Amazon</a></li>
+                <li>Menüpunkt 7</li>
+                <li>Menüpunkt 8</li>
+                <li>Menüpunkt 9</li>
+                <li>Menüpunkt 10</li>
+                <li>Menüpunkt 11</li>
+                <li>Menüpunkt 12</li>
+                <li>Menüpunkt 13</li>
+                <li>Menüpunkt 14</li>
+                <li>Menüpunkt 15</li>
+                <li>Menüpunkt 16</li>
+                <li>Menüpunkt 17</li>
+                <li>Menüpunkt 18</li>
+                <li>Menüpunkt 19</li>
+                <li>Menüpunkt 20</li>
+                <li>Menüpunkt 21</li>
+                <li>Menüpunkt 22</li>
+                <li>Menüpunkt 23</li>
+                <li>Menüpunkt 24</li>
+                <li>Menüpunkt 25</li>
+                <li>Menüpunkt 26</li>
+                <li>Menüpunkt 27</li>
+                <li>Menüpunkt 28</li>
+                <li>Menüpunkt 29</li>
+                <li>Menüpunkt 30</li>
+                <li>Menüpunkt 31</li>
+                <li>Menüpunkt 32</li>
+                <li>Menüpunkt 33</li>
+                <li>Menüpunkt 34</li>
+                <li>Menüpunkt 35</li>
+                <li>Menüpunkt 36</li>
+                <li>Menüpunkt 37</li>
+                <li>Menüpunkt 38</li>
+                <li>Menüpunkt 39</li>
+                <li>Menüpunkt 40</li>
+            </ul>
+        </div>
+        <div class="main-content-box">
+            
+            <!-- Jinja2 START-->
+            {% block content %}
+            <!-- CONTENT  -->
+            {% endblock %}
+            <!-- Jinja2 ENDE-->
+            
+        </div>
+    </div>
+</body>

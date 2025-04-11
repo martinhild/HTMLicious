@@ -1,0 +1,48 @@
+<script>
+    document.addEventListener('DOMContentLoaded',function(){
+        let max = 100;
+        let ranNum = Math.floor(Math.random() * (max + 1));
+        document.querySelector('#max').innerHTML = max;
+
+        document.querySelector('#inputGuess').addEventListener('submit',function(){
+          event.preventDefault();
+          let guess = document.querySelector('#guess').value;
+          let response;
+          let color;
+          if (guess < ranNum) {
+             response = "größer als " + guess;
+             color = 'red';
+            } else if (guess > ranNum) {
+              response = "kleiner als " +guess;
+              color = 'red';
+            } else {
+              response = "Richtig! - Es ist die " + guess;
+              color = 'green';
+            }
+          document.querySelector('#response').innerHTML = response;
+          document.querySelector('#response').style.color = color;
+        });
+    });
+</script>
+
+<!-- erweitert base_template.html-->
+{% extends 'base_template.html' %}
+
+<!-- Jinja2 START-->
+{% block content %}
+      
+    <div class="game">
+        <br>
+        <h4>Finde die zufällige Zahl zwischen 0 und <var id="max"></var></h4>
+        <br>
+        <form id="inputGuess">
+            <input type="number" id="guess" placeholder="guess">
+            <button type="submit">Raten</button>
+            <br>
+            <br>
+            <p id="response"></p>
+        </form>
+    </div>
+
+<!-- Jinja2 ENDE-->
+{% endblock %}

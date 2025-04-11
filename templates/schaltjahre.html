@@ -1,0 +1,40 @@
+<!-- erweitert base_template.html-->
+{% extends 'base_template.html' %}
+
+<!-- Jinja2 START-->
+{% block content %}
+      
+<div class ="game">
+    <h4>Schaltjahre seit deinem Geburtstag</h4>
+    <br>
+    <h5>Gib dein Geburtsdatum ein:</h5>
+    <br>
+
+    <!-- Eingabe Geburtsdatum, siehe app.py, @app.route('/schaltjahre'... -->
+    <form method="POST" action="/schaltjahre">
+
+        <label for="geburtsdatum"></label>
+        <input type="date" id="geburtsdatum" name="geburtsdatum" required>
+        <button type="submit">Click</button>
+
+    </form>
+    <br>
+
+    <!-- Jinja2, prüfe ob 'schaltjahre' existiert -->
+    {% if schaltjahre is not none %}
+
+        <p>Schaltjahre seit deinem Geburtsjahr: {{ schaltjahre }}</p>
+
+
+        <p>Zähle gerne selbst nach:</p>
+        <img src="{{ url_for('static', filename='images/schaltjahre.png') }}" alt="Bild">
+        
+
+    {% endif %}
+
+
+
+</div>
+
+<!-- Jinja2 ENDE-->
+{% endblock %}
